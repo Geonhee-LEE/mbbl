@@ -1,11 +1,5 @@
 # Model Based Reinforcement Learning Benchmarking Library (MBBL)
 
-<p align=center>
-<img src="img/mbbl_front.png" width=900>
-</p>
-<p align=center>
-<img src="img/mbbl_result_table.jpeg" width=900>
-</p>
 
 # Introduction
 
@@ -168,3 +162,12 @@ Here is available environments and their mappings to the name used in the paper.
 | Repo-Name     | gym\_cheetah   | gym\_swimmer          | gym\_fswimmer | gym\_ant                | gym\_fant         | gym\_walker2d |
 | Env           | Walker2D-ET    | Hopper                | Hopper-ET     | SlimHumanoid            | SlimHumanoid-ET   | Humanoid-ET   |
 | Repo-Name     | gym\_fwalker2d | gym\_hopper           | gym\_fhopper  | gym\_nostopslimhumanoid | gym\_slimhumanoid | gym\_humanoid |
+
+
+
+<p align=center>
+<img src="img/mbbl_front.png" width=900>
+</p>
+<p align=center>
+<img src="img/mbbl_result_table.jpeg" width=900>
+</p>

@@ -164,6 +164,7 @@ Here is available environments and their mappings to the name used in the paper.
 | Repo-Name     | gym\_fwalker2d | gym\_hopper           | gym\_fhopper  | gym\_nostopslimhumanoid | gym\_slimhumanoid | gym\_humanoid |
 
 
+## Results
 
 <p align=center>
 <img src="img/mbbl_front.png" width=900>

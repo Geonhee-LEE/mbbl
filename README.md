@@ -30,15 +30,15 @@ Some of the algorithms are not yet merged into this repo. We use the following c
 ### 1. Random Shooting (RS) ![#22d50c](https://placehold.it/15/22d50c/000000?text=+)
 Rao, Anil V. "A survey of numerical methods for optimal control." Advances in the Astronautical Sciences 135.1 (2009): 497-528. [Link](http://www.anilvrao.com/Publications/ConferencePublications/trajectorySurveyAAS.pdf)
 ```
-python main/rs_main.py --exp_id rs_gym_cheetah_seed_1234 \
-    --task gym_cheetah \
+python main/rs_main.py --exp_id rs_gym_pendulum_seed_1234 \
+    --task gym_pendulum \
     --num_planning_traj 1000 --planning_depth 10 --random_timesteps 10000 \
     --timesteps_per_batch 3000 --num_workers 20 --max_timesteps 200000 --seed 1234
 ```
 The following script will test the performance when using ground-truth dynamics:
 ```
 python main/rs_main.py --exp_id rs_${env_type}\
-    --task gym_cheetah \
+    --task gym_pendulum \
     --num_planning_traj 1000 --planning_depth 10 --random_timesteps 0 \
     --timesteps_per_batch 1 --num_workers 20 --max_timesteps 20000 \
     --gt_dynamics 1
@@ -48,8 +48,8 @@ Also, set `--check_done 1` for agents to detect if the episode is terminated (ne
 ### 2. Mode-Free Model-Based (MB-MF) ![#22d50c](https://placehold.it/15/22d50c/000000?text=+)
 Nagabandi, Anusha, et al. "Neural network dynamics for model-based deep reinforcement learning with model-free fine-tuning." arXiv preprint arXiv:1708.02596 (2017). [Link](https://arxiv.org/abs/1708.02596)
 ```
-python main/mbmf_main.py --exp_id mbmf_gym_cheetah_ppo_seed_1234 \
-    --task gym_cheetah --trust_region_method ppo \
+python main/mbmf_main.py --exp_id mbmf_gym_pendulum_ppo_seed_1234 \
+    --task gym_pendulum --trust_region_method ppo \
     --num_planning_traj 5000 --planning_depth 20 --random_timesteps 1000 \
     --timesteps_per_batch 1000 --dynamics_epochs 30 \
     --num_workers 20 --mb_timesteps 7000 --dagger_epoch 300 \
@@ -63,8 +63,8 @@ Chua, K., Calandra, R., McAllister, R., & Levine, S. (2018). Deep reinforcement 
 See the codebase for [POPLIN](https://github.com/WilsonWangTHU/POPLIN), where you can benchmark PETS-RS and PETS-CEM following the readme.
 PETS-RS with ground-truth is essentially RS with ground-truth, and to run the PETS-CEM with ground-truth dynamics:
 ```
-python main/pets_main.py --exp_id pets-gt-gym_cheetah \
-    --task gym_cheetah \
+python main/pets_main.py --exp_id pets-gt-gym_pendulum \
+    --task gym_pendulum \
     --num_planning_traj 500 --planning_depth 30 --random_timesteps 0 \
     --timesteps_per_batch 1 --num_workers 10 --max_timesteps 20000 \
     --gt_dynamics 1
@@ -80,8 +80,8 @@ We implemented and benchmarked the environments in this repo [PILCO](https://git
 ### 5. Iterative Linear Quadratic-Gaussian (iLQG) ![#22d50c](https://placehold.it/15/22d50c/000000?text=+)
 Tassa, Y., Erez, T., & Todorov, E. (2012, October). Synthesis and stabilization of complex behaviors through online trajectory optimization. In 2012 IEEE/RSJ International Conference on Intelligent Robots and Systems (pp. 4906-4913). IEEE. [Link](https://homes.cs.washington.edu/~todorov/papers/TassaIROS12.pdf)
 ```
-python main/ilqr_main.py  --exp_id ilqr-gym_cheetah \ 
-    --max_timesteps 2000 --task gym_cheetah \
+python main/ilqr_main.py  --exp_id ilqr-gym_pendulum \ 
+    --max_timesteps 2000 --task gym_pendulum \
     --timesteps_per_batch 1 --ilqr_iteration 10 --ilqr_depth 30 \
     --max_ilqr_linesearch_backtrack 10  --num_workers 2 \
     --gt_dynamics 1
@@ -118,16 +118,16 @@ We implemented and benchmarked the environments in this repo [MB-MPO](https://gi
 ### 11. Trust-Region Policy Optimization (TRPO) ![#22d50c](https://placehold.it/15/22d50c/000000?text=+)
 Schulman, John, et al. "Trust region policy optimization." International Conference on Machine Learning. 2015. [Link](https://arxiv.org/abs/1502.05477)
 ```
-python main/mf_main.py --exp_id trpo_gym_cheetah_seed1234 \
-    --timesteps_per_batch 2000 --task gym_cheetah \
+python main/mf_main.py --exp_id trpo_gym_pendulum_seed1234 \
+    --timesteps_per_batch 2000 --task gym_pendulum \
     --num_workers 5 --trust_region_method trpo --max_timesteps 200000
 ```
 
 ### 12. Proximal-Policy Optimization (PPO) ![#22d50c](https://placehold.it/15/22d50c/000000?text=+)
 Schulman, John, et al. "Proximal policy optimization algorithms." arXiv preprint arXiv:1707.06347 (2017). [Link](https://arxiv.org/abs/1707.06347)
 ```
-python main/mf_main.py --exp_id ppo_gym_cheetah_seed1234 \
-    --timesteps_per_batch 2000 --task gym_cheetah \
+python main/mf_main.py --exp_id ppo_gym_pendulum_seed1234 \
+    --timesteps_per_batch 2000 --task gym_pendulum \
     --num_workers 5 --trust_region_method ppo --max_timesteps 200000
 ```
 ### 13. Twin Delayed Deep Deterministic Policy Gradient (TD3) ![#f17819](https://placehold.it/15/f17819/000000?text=+)
